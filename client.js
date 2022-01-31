@@ -2,9 +2,11 @@ console.log('Here are all the available people:', people);
 
 $(document).ready(readyNow);
 
+let dunker = randomNumber(0, people.length);
+
 function readyNow(){
     console.log('JQ');
-
+    $('header').append(`<h1>click on: ${people[dunker].name}</h1>`)
     displayDunkers();
 }
 
@@ -19,3 +21,9 @@ function displayDunkers (){
     $('#container').append(person);    
     }
 } // end displayDunkers
+
+
+function randomNumber(min, max){
+    return Math.floor(Math.random() * (1 + max - min) + min);
+}
+
